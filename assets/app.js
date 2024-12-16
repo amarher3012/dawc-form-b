@@ -28,12 +28,10 @@ provinceSelect.addEventListener('input', () => {
     const cities = [...citySelect];
     cities.forEach((city) => city.remove());
 
-    if (provinceSelect.value === 'huelva') {
-        provinces.huelva.forEach((city) => {
-            const cityList = document.createElement('option');
-            cityList.value = city;
-            cityList.textContent = city;
-            citySelect.appendChild(cityList);
-        });
-    }
+    provinces[provinceSelect.value].forEach((city) => {
+        const cityList = document.createElement('option');
+        cityList.value = city;
+        cityList.textContent = city;
+        citySelect.appendChild(cityList);
+    });
 });
